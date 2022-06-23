@@ -8,10 +8,16 @@ window.addEventListener('load', ()=> {
 
         const task = input.value;
         const task_el = document.createElement('div');
-        task_el.classList.add('task');  
+        task_el.classList.add('task');
         
         const task_content_el = document.createElement('div');
         task_content_el.classList.add('content'); 
+        
+        const list = document.getElementById("tasks");
+        const firstname = "";
+        const entry = document.createElement('li');
+        entry.appendChild(document.createTextNode(firstname));
+        list.appendChild(entry);
 
         task_el.appendChild(task_content_el);
 
@@ -40,7 +46,7 @@ window.addEventListener('load', ()=> {
 
         task_el.appendChild(task_action_el);
 
-        if(task == "") {
+        if(task_el == "") {
             alert("Please enter some task");
             return false;
           }
