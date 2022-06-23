@@ -34,7 +34,7 @@ window.addEventListener('load', ()=> {
         const task_del_el = document.createElement('button');
         task_del_el.classList.add('delete');
         task_del_el.innerText = 'Delete';
-
+        
         task_action_el.appendChild(task_edit_el);
         task_action_el.appendChild(task_del_el);
 
@@ -58,6 +58,11 @@ window.addEventListener('load', ()=> {
         task_del_el.addEventListener('click', (e)=>{
             list_el.removeChild(task_el);
         });
+
+        if (task == "") {
+            alert("Name must be filled out");
+            return false;
+          }
 
     });
 });
