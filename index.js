@@ -40,7 +40,10 @@ window.addEventListener('load', ()=> {
 
         task_el.appendChild(task_action_el);
 
-        input.value='';
+        if(task == "") {
+            alert("Please enter some task");
+            return false;
+          }
 
         list_el.appendChild(task_el);
 
@@ -52,17 +55,12 @@ window.addEventListener('load', ()=> {
             }else{
                 task_edit_el.innerText="Edit";
                 task_input_el.setAttribute("readonly","readonly");
-            } 
+            }
         });
 
         task_del_el.addEventListener('click', (e)=>{
             list_el.removeChild(task_el);
         });
-
-        if (task == "") {
-            alert("Name must be filled out");
-            return false;
-          }
 
     });
 });
